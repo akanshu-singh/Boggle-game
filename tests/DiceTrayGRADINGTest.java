@@ -1,3 +1,4 @@
+// Akanshu Singh 
 package tests;
 
 import static org.junit.Assert.*;
@@ -18,14 +19,26 @@ public class DiceTrayGRADINGTest {
     repeatsBrd = new DiceTray(repeats);
   }
 
-  private char[][] randChars = { { 'R', 'E', 'D', 'M' }, { 'B', 'A', 'N', 'O' },
-      { 'T', 'Q', 'D', 'F' }, { 'L', 'O', 'E', 'V' } };
+  private char[][] randChars = {
+		  { 'R', 'E', 'D', 'M' },
+		  						
+		  { 'B', 'A', 'N', 'O' },
+						      
+		  { 'T', 'Q', 'D', 'F' }, 
+						      
+		  { 'L', 'O', 'E', 'V' } };
 
-  private char[][] longWord = { { 'A', 'B', 'S', 'E' }, { 'I', 'M', 'T', 'N' },
-      { 'N', 'D', 'E', 'D' }, { 'S', 'S', 'E', 'N' } };
+  private char[][] longWord = {
+		  { 'A', 'B', 'S', 'E' },
+		  { 'I', 'M', 'T', 'N' },  
+		  { 'N', 'D', 'E', 'D' },
+		  { 'S', 'S', 'E', 'N' } };
 
-  private char[][] repeats = { { 'M', 'O', 'S', 'E' }, { 'D', 'A', 'L', 'N' },
-      { 'T', 'O', 'P', 'D' }, { 'S', 'S', 'E', 'N' } };
+  private char[][] repeats = { 
+		  { 'M', 'O', 'S', 'E' }, 
+		  { 'D', 'A', 'L', 'N' },
+      { 'T', 'O', 'P', 'D' },
+      { 'S', 'S', 'E', 'N' } };
 
   private DiceTray randBrd1, lngWrdBrd, repeatsBrd;
 
