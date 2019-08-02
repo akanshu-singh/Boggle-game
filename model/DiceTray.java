@@ -65,7 +65,7 @@ public class DiceTray {
 
 	private boolean recur(String speci, Integer int1, Integer int2, boolean[][] var, String attempt, int i) {
 		speci += board[int1][int2];
-		System.out.println(speci);
+		//main//System.out.println(speci);
 		if (attempt.charAt(i) != board[int1][int2]) { // System.out.println(speci);
 			return false;
 		}
