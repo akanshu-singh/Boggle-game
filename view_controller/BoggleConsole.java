@@ -61,9 +61,9 @@ public static void main(String[] args) {
     }
     System.out.println();
     Collections.sort(var);;
-    input= process.processlist(var,a);
-   dict=process.dict(input);
-   score=process.check();
+    process.processlist(var,a);
+   process.dict();
+   process.check();
    process.notfound();
    
     

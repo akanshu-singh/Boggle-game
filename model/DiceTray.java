@@ -15,7 +15,7 @@ public class DiceTray {
 	 * 
 	 */
 
-	private char[][] board;
+	public static char[][] board;
 	private boolean[][] check;
 
 	public DiceTray(char[][] newBoard) {
@@ -33,6 +33,7 @@ public class DiceTray {
 	 * @return True if search is found
 	 */
 	public boolean found(String attempt) {
+		// this function returns if attempt is in the board i.e. dicetray
 		// TODO: Implement this method
 		if (attempt.substring(0, 2).equals("Qu")) {
 			attempt = "Q" + attempt.substring(2, attempt.length());
@@ -45,9 +46,8 @@ public class DiceTray {
 		return val;
 	}
 
-	// need to set up a loop to go through all the loc elements
-	// if recur return false check for another value of loc
 	private boolean checklist(ArrayList<Integer>[] loc, String attempt) {
+		// this function returns true if the attempt is in loc
 		boolean val = false;
 		// System.out.println(loc.length+"loc length reps");
 		for (int i = 0; i < loc.length; i++) {
@@ -64,8 +64,9 @@ public class DiceTray {
 	}
 
 	private boolean recur(String speci, Integer int1, Integer int2, boolean[][] var, String attempt, int i) {
+		// this function uses backtracking to find the word
 		speci += board[int1][int2];
-		//main//System.out.println(speci);
+		// main//System.out.println(speci);
 		if (attempt.charAt(i) != board[int1][int2]) { // System.out.println(speci);
 			return false;
 		}
@@ -123,6 +124,8 @@ public class DiceTray {
 	}
 
 	private ArrayList<Integer>[] Locationlist(String attempt) {
+		// this function checks for string attempt in dicetray and returns a
+		// locationlist of elements that match it
 		// TODO Auto-generated method stub
 		int count = 0;
 		for (int i = 0; i < board.length; i++) {
@@ -166,7 +169,7 @@ public class DiceTray {
 	}
 
 	private boolean doesnotcontain(int[] var, int count, ArrayList<Integer>[] alist) {
-		// System.out.println(count);
+		// this function returns whether alist contains the specific element;
 		for (int k = 0; k < count; k++) {
 			if (alist[k].get(0) == var[0] && alist[k].get(1) == var[1]) {
 				return false;
@@ -175,5 +178,24 @@ public class DiceTray {
 		}
 		return true;
 
+	}
+
+	public String toString() {
+		// this function returns a string version of dice tray that can be directly
+		// pasted on dicetray textfield
+		String var = "";
+		for (int i = 0; i < board.length; i++) {
+			for (int k = 0; k < board[0].length; k++) {
+				if (k != board[0].length - 1) {
+					if (board[i][k] == 'Q')
+						var += "Qu" + "     ";
+					else
+						var += board[i][k] + "     ";
+				} else
+					var += board[i][k];
+			}
+			var += "\n";
+		}
+		return var;
 	}
 }
